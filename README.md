@@ -1,39 +1,77 @@
-# 🥋 WebDojo
+🧪 Cypress Test Automation
 
-![WebDojo Cover](.github/cover.png)
+Este repositório contém testes automatizados end-to-end (E2E) desenvolvidos com Cypress para validar fluxos importantes de uma aplicação web.
 
-## 🚀 Sobre o Projeto
+Os testes foram criados como parte dos meus estudos em Quality Assurance e automação de testes, utilizando a aplicação WebDojo como ambiente de prática.
 
-O **WebDojo** é um aplicativo exclusivo para os alunos do **Curso Ninja do Cypress**, ministrado pelo mestre **Fernando Papito**! 🥷💻 Ele foi criado para ser um **campo de treinamento prático**, onde os alunos podem aprimorar suas habilidades em automação de testes com desafios e exercícios focados no **Cypress**.
+🚀 Cenários automatizados
+🔐 Login
 
-🛠️ Tecnologias Utilizadas
+Testes automatizados para validar autenticação do usuário:
 
-- [x] Git & GitHub 🌍 (Controle de versão e repositório remoto)
-- [x] Bash (Linha de Comando) 💻 (Execução de scripts e comandos)
-- [x] Visual Studio Code 🖥️ (Editor de código recomendado)
-- [x] Node.js (22+) 🟢 (Runtime JavaScript)
-- [x] Gerenciador de pacotes (npm ou yarn) 📦 (Dependências do projeto)
-- [x] Cypress 🧪 (Framework de testes end-to-end)
-- [x] Docker & Docker Compose 🐳 (Ambiente isolado para execução)
-- [x] PostgreSQL 🗄 (Banco de dados relacional)
-- [x] Use Bruno 🔌 (Cliente de API para testes de requisições)
+✅ Login com credenciais válidas
 
-## 📖 Como Usar
+❌ Login com senha inválida
 
-As instruções detalhadas de instalação e uso do **WebDojo** estão disponíveis dentro do **Curso Ninja do Cypress**.
+❌ Login com email inválido
 
-🔗 **Acesse o curso e seja Ninja da Automação em Cypress!** 👉 [ninjadocypress.com.br](https://ninjadocypress.com.br)
+🔎 Validação de mensagens de erro
 
-## ⚠️ Contribuição
+Exemplo de teste:
 
-O **WebDojo** é um ambiente **exclusivo** para os alunos do **Curso Ninja do Cypress**, e por isso, **não aceita contribuições externas**.
+cy.submeterLogin('papito@webdojo.com', 'katana123')
 
-📢 Para suporte e dúvidas, utilize os canais oficiais do curso!
+cy.get('[data-cy="user-name"]')
+  .should('be.visible')
+  .and('have.text', 'Fernando Papito')
+📝 Formulário de Consultoria
 
-## 🔒 Licença
+Automação completa do fluxo de envio do formulário:
 
-Este projeto é **exclusivo para alunos** do **Curso Ninja do Cypress**. 🚫 O compartilhamento ou distribuição sem autorização é proibido.
+Preenchimento de campos
 
-------
+Upload de arquivo
 
-💙 Feito com dedicação e muito café por **Fernando Papito** e a equipe do **Curso Ninja do Cypress**. 🚀🔥
+Seleção de tecnologias
+
+Marcação de checkboxes
+
+Validação de envio com sucesso
+
+Teste negativo de campos obrigatórios
+
+🛠️ Tecnologias utilizadas
+
+Cypress
+
+JavaScript
+
+Node.js
+
+Git & GitHub
+
+▶️ Como executar o projeto
+
+Instalar dependências:
+
+npm install
+
+Executar Cypress com interface:
+
+npx cypress open
+
+Executar testes no terminal:
+
+npx cypress run
+📚 Observação
+
+Este projeto foi desenvolvido para fins educacionais, com o objetivo de praticar automação de testes utilizando Cypress.
+
+A aplicação WebDojo foi utilizada apenas como sistema sob teste.
+
+👩‍💻 Autora
+
+Vitória Lima
+
+📎 LinkedIn
+https://www.linkedin.com/in/vitória-aparecida-lima
